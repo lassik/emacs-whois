@@ -62,9 +62,11 @@
     ("^ *\\([A-Z][A-Za-z0-9-/ ]+[a-z][A-Za-z0-9-/ ]+:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-string-face))
-    ;; Date and time in ISO format with timezone
+    ;; Date and time in ISO format (yyyy-mm-ddThh:mm:ss). Optionally
+    ;; followed by fractional seconds and/or timezone.
     (,(concat "[12][09][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
               "T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]"
+              "\\(?:\\.[0-9]+\\)?"
               "\\(?:Z\\|[+-][0-9][0-9][0-9][0-9]\\)")
      (0 font-lock-preprocessor-face t))
     ;; Email address (or other address using @ syntax)
