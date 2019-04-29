@@ -13,7 +13,7 @@
 ;;; Commentary:
 ;;
 ;; This package complements (does not replace) the standard whois
-;; functionality of GNU Emacs. It provides:
+;; functionality of GNU Emacs.  It provides:
 ;;
 ;; * A `whois-mode' with font-lock highlighting to make whois
 ;;   responses easier to read.
@@ -92,7 +92,7 @@ give some FLAGS to the whois client then it can mean something
 different.
 
 Optional argument FLAGS gives extra command line arguments for
-the whois program. Interactively, using a prefix argument will
+the whois program.  Interactively, using a prefix argument will
 let you type the flags in the minibuffer before typing the object
 to search for."
   (interactive
