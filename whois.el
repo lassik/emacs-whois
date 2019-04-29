@@ -87,8 +87,14 @@
 (defun whois-shell (object &optional flags)
   "Run whois domain name query on OBJECT using external program.
 
+OBJECT is usually a domain name (e.g. \"gnu.org\"), but if you
+give some FLAGS to the whois client then it can mean something
+different.
+
 Optional argument FLAGS gives extra command line arguments for
-the whois program."
+the whois program. Interactively, using a prefix argument will
+let you type the flags in the minibuffer before typing the object
+to search for."
   (interactive
    (let ((flags (when current-prefix-arg
                   (read-from-minibuffer "Flags for the whois command: "))))
