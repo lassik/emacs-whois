@@ -74,6 +74,7 @@
     ("https?://[A-Za-z0-9.:/#?&=_+-]*"
      (0 font-lock-variable-name-face t))))
 
+;;;###autoload
 (define-derived-mode whois-mode fundamental-mode "Whois"
   "Major mode for browsing WHOIS domain name registration records."
   :syntax-table whois-mode-syntax-table
@@ -82,6 +83,7 @@
   (set (make-local-variable 'font-lock-defaults)
        '((whois-mode-font-lock-keywords) nil nil ((?_ . "w")) nil)))
 
+;;;###autoload
 (defun whois-shell (object &optional flags)
   "Run whois domain name query on OBJECT using external program.
 
