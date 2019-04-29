@@ -50,12 +50,12 @@
   `(;; >>> Last update of whois database: ... <<<
     ("^>>> Last update.*?: .*? <<<$"
      (0 font-lock-type-face))
-    ;; Keyword: Value (special case for Domain Name, Name Server, etc.)
-    ("^ *\\(.*?Name.*?:\\|.*?Server.*?\\)\\(.*\\)$"
-     (1 font-lock-type-face)
-     (2 font-lock-function-name-face))
     ;; Keyword: Value (special case for DNSSEC)
     ("^ *\\(DNSSEC:\\)\\(.*\\)$"
+     (1 font-lock-type-face)
+     (2 font-lock-function-name-face))
+    ;; Keyword: Value (special case for Domain Name, Name Server, etc.)
+    ("^ *\\(.*?Name.*?:\\|.*?Server.*?\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-function-name-face))
     ;; Keyword: Value (generic case)
