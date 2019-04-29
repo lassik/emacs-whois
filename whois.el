@@ -104,6 +104,7 @@ typing the object to search for."
     (switch-to-buffer (get-buffer-create "*Whois*"))
     (unless (equal 'whois-mode major-mode)
       (whois-mode))
+    (erase-buffer)
     (start-process-shell-command
      "whois" (current-buffer)
      (concat "whois" " " flags " " "--" " " (shell-quote-argument object)))))
