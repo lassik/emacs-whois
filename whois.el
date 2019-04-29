@@ -90,9 +90,10 @@
 Optional argument FLAGS gives extra command line arguments for
 the whois program."
   (interactive
-   (list (read-from-minibuffer "Domain name (or other object) for whois: ")
-         (when current-prefix-arg
-           (read-from-minibuffer "Flags for the whois command: "))))
+   (let ((flags (when current-prefix-arg
+                  (read-from-minibuffer "Flags for the whois command: "))))
+     (list (read-from-minibuffer "Domain name (or other object) for whois: ")
+           flags)))
   (let ((flags (or flags "")))
     (switch-to-buffer (get-buffer-create "*Whois*"))
     (unless (equal 'whois-mode major-mode)
