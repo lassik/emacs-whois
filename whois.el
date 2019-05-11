@@ -86,30 +86,21 @@
        '((whois-mode-font-lock-keywords) nil nil ((?_ . "w")) nil)))
 
 ;;;###autoload
-(defun whois-shell (object &optional flags)
+(defun whois-shell (query)
   "Run whois domain name query using external program.
 
-OBJECT is usually the domain name to search for (e.g. \"gnu.org\"),
-but if you give some FLAGS to the whois client then it can mean
-something different.
-
-Optional argument FLAGS is a string with extra command line
-arguments for the whois program.  Interactively, using a prefix
-argument will let you type the flags in the minibuffer before
-typing the object to search for."
-  (interactive
-   (let ((flags (when current-prefix-arg
-                  (read-from-minibuffer "Flags for the whois command: "))))
-     (list (read-from-minibuffer "Domain name (or other object) for whois: ")
-           flags)))
-  (let ((flags (or flags "")))
-    (switch-to-buffer (get-buffer-create "*Whois*"))
-    (unless (equal 'whois-mode major-mode)
-      (whois-mode))
-    (erase-buffer)
-    (start-process-shell-command
-     "whois" (current-buffer)
-     (concat "whois" " " flags " " "--" " " (shell-quote-argument object)))))
+QUERY is usually the domain name to search for (e.g.
+\"gnu.org\"), but if you give some flags to the whois client then
+it can mean something different. It's possible to give command
+line options to the whois program by separating them with
+spaces."
+  (interactive "sWhois query (and command line options): ")
+  (switch-to-buffer (get-buffer-create "*Whois*"))
+  (unless (equal 'whois-mode major-mode)
+    (whois-mode))
+  (erase-buffer)
+  (start-process-shell-command
+   "whois" (current-buffer) (concat "whois " query)))
 
 (provide 'whois)
 
