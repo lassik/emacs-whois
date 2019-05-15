@@ -1,4 +1,4 @@
-;;; whois.el --- Extra functionality for WHOIS domain name queries
+;;; whois.el --- Syntax highlighted domain name queries using system whois
 ;;
 ;; Copyright 2019 Lassi Kortela
 ;; SPDX-License-Identifier: GPL-3.0-or-later
