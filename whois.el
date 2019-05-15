@@ -61,8 +61,12 @@
     ("^ *\\(.*?Name.*?:\\|.*?Server.*?\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-function-name-face))
+    ;; Keyword: Value (lowercase key......:, e.g. fi/se domains)
+    ("^ *\\([a-z0-9 -]+\\.*:\\)\\(.*\\)$"
+     (1 font-lock-type-face)
+     (2 font-lock-string-face))
     ;; Keyword: Value (generic case)
-    ("^ *\\([A-Z][A-Za-z0-9-/ ]+[a-z][A-Za-z0-9-/ ]+:\\)\\(.*\\)$"
+    ("^ *\\([A-Z][A-Za-z0-9-/ ]+[a-z][A-Za-z0-9-/ ]+\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-string-face))
     ;; Date and time in ISO format (yyyy-mm-ddThh:mm:ss). Optionally
