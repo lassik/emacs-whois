@@ -65,9 +65,9 @@
     ;; Date and time in ISO format (yyyy-mm-ddThh:mm:ss). Optionally
     ;; followed by fractional seconds and/or timezone.
     (,(concat "[12][09][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
-              "T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]"
+              "\\(?:T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]"
               "\\(?:\\.[0-9]+\\)?"
-              "\\(?:Z\\|[+-][0-9][0-9][0-9][0-9]\\)")
+              "\\(?:Z\\|[+-][0-9][0-9][0-9][0-9]\\)\\)?")
      (0 font-lock-preprocessor-face t))
     ;; Email address (or other address using @ syntax)
     ("[A-Za-z0-9.+-]+@[A-Za-z0-9.-]+"
