@@ -47,7 +47,10 @@
     st))
 
 (defconst whois-mode-font-lock-keywords
-  `(;; >>> Last update of whois database: ... <<<
+  `(;; # Comment line
+    ("^#.*$"
+     (0 font-lock-comment-face))
+    ;; >>> Last update of whois database: ... <<<
     ("^>>> Last update.*?: .*? <<<$"
      (0 font-lock-type-face))
     ;; Keyword: Value (special case for DNSSEC)
