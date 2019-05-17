@@ -51,8 +51,9 @@
     ("^[#%]\\(?: .*\\)?$"
      (0 font-lock-comment-face))
     ;; >>> Last update of whois database: ... <<<
-    ("^>>> Last update.*?: .*? <<<$"
-     (0 font-lock-type-face))
+    ("^>>> Last update.*?: \\(.*?\\) <<<$"
+     (0 font-lock-type-face)
+     (1 font-lock-preprocessor-face t))
     ;; Keyword: Value (special case for DNSSEC)
     ("^ *\\(DNSSEC\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
