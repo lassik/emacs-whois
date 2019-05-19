@@ -48,7 +48,7 @@
 
 (defconst whois-mode-font-lock-keywords
   `(;; Comment starting with one or more # or % characters and space.
-    ("^[#%]+\\(?: .*\\)?$"
+    ("^[#%*]+\\(?: .*\\)?$"
      (0 font-lock-comment-face))
     ;; >>> Last update of whois database: ... <<<
     ("^>>> Last update.*?: \\(.*?\\) <<<$"
