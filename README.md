@@ -9,3 +9,9 @@ functionality of GNU Emacs. It provides:
 * A `whois-shell` function to make a whois query using the system
   whois program instead of Emacs' own (often not up to date) whois
   client.
+
+To replace Emacs' own `whois` command with the one from this package:
+
+```
+(defalias 'whois 'whois-shell)
+```
