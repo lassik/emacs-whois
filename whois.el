@@ -1,7 +1,7 @@
 ;;; whois.el --- Syntax highlighted domain name queries using system whois
 ;;
 ;; Copyright 2019 Lassi Kortela
-;; SPDX-License-Identifier: GPL-3.0-or-later
+;; SPDX-License-Identifier: GPL-2.0-or-later
 ;; Author: Lassi Kortela <lassi@lassi.io>
 ;; URL: https://github.com/lassik/emacs-whois
 ;; Version: 0.1.0
