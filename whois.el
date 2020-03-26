@@ -85,7 +85,7 @@
      (0 font-lock-variable-name-face t))))
 
 ;;;###autoload
-(define-derived-mode whois-mode fundamental-mode "Whois"
+(define-derived-mode whois-mode special-mode "Whois"
   "Major mode for browsing WHOIS domain name registration records."
   :syntax-table whois-mode-syntax-table
   (set (make-local-variable 'paragraph-separate) "[ \t]*$")
