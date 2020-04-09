@@ -88,6 +88,7 @@
 (define-derived-mode whois-mode special-mode "Whois"
   "Major mode for browsing WHOIS domain name registration records."
   :syntax-table whois-mode-syntax-table
+  (setq buffer-read-only nil)
   (set (make-local-variable 'paragraph-separate) "[ \t]*$")
   (set (make-local-variable 'paragraph-start) "[ \t]*$")
   (set (make-local-variable 'font-lock-defaults)
