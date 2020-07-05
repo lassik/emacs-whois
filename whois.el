@@ -111,6 +111,36 @@ spaces."
   (start-process-shell-command
    "whois" (current-buffer) (concat "whois " query)))
 
+(defun whois-detailed ()
+  "Run domain name query using registrar whois server.
+
+Each domain name is registered with a particular registar. Many
+registrars run their own whois server which provides much more
+detailed information than the generic whois servers where queries
+are done by default.
+
+This command gets the domain name and the registrar whois server
+from the current buffer and does a new whois query using them.
+Most of the time you'd want to run this from the *Whois* buffer,
+in which case the information in that buffer will be replaced
+with an expanded copy of the same information."
+  (interactive)
+  (save-excursion
+    (save-restriction
+      (widen)
+      (goto-char (point-min))
+      (let ((case-fold-search t) domain server)
+        (unless (re-search-forward
+                 "^ *domain.*?: +\\([a-z0-9.]+\\)" nil t)
+          (error "No domain name"))
+        (setq domain (downcase (match-string 1)))
+        (unless (re-search-forward
+                 "Registrar WHOIS Server: \\([a-z0-9.]+\\)" nil t)
+          (error "Registrar whois server not known"))
+        (setq server (downcase (match-string 1)))
+        (message "Looking up %s using %s..." domain server)
+        (whois-shell (concat "-h " server " " domain))))))
+
 (provide 'whois)
 
 ;;; whois.el ends here
