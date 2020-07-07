@@ -13,5 +13,5 @@ functionality of GNU Emacs. It provides:
 To replace Emacs' own `whois` command with the one from this package:
 
 ```
-(defalias 'whois 'whois-shell)
+(when (require 'whois nil t) (defalias 'whois 'whois-shell))
 ```
