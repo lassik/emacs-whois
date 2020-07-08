@@ -111,7 +111,7 @@ spaces."
   (start-process-shell-command
    "whois" (current-buffer) (concat "whois " query)))
 
-(defun whois-detailed ()
+(defun whois-expand ()
   "Run domain name query using registrar whois server.
 
 Each domain name is registered with a particular registar. Many
