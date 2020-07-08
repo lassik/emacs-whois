@@ -4,7 +4,7 @@
 ;; SPDX-License-Identifier: GPL-2.0-or-later
 ;; Author: Lassi Kortela <lassi@lassi.io>
 ;; URL: https://github.com/lassik/emacs-whois
-;; Version: 0.1.0
+;; Version: 0.2.0
 ;; Package-Requires: ((emacs "24"))
 ;; Keywords: network comm
 ;;
