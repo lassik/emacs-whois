@@ -112,18 +112,18 @@ spaces."
    "whois" (current-buffer) (concat "whois " query)))
 
 (defun whois-expand ()
-  "Run domain name query using registrar whois server.
+  "Expand the whois information in the current buffer.
 
-Each domain name is registered with a particular registar. Many
-registrars run their own whois server which provides much more
-detailed information than the generic whois servers where queries
-are done by default.
+This command parses the domain name and the registrar's whois
+server from the whois information in the current buffer. It then
+does a query for the domain on that server (via `whois-shell`).
 
-This command gets the domain name and the registrar whois server
-from the current buffer and does a new whois query using them.
+Many domain registrars run their own whois server. Registrars'
+servers typically give much more detailed information than the
+generic whois servers where queries are sent by default.
+
 Most of the time you'd want to run this from the *Whois* buffer,
-in which case the information in that buffer will be replaced
-with an expanded copy of the same information."
+in which case the information in that buffer will be expanded."
   (interactive)
   (save-excursion
     (save-restriction
