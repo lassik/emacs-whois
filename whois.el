@@ -124,7 +124,7 @@ spaces."
 
 This command parses the domain name and the registrar's whois
 server from the whois information in the current buffer. It then
-does a query for the domain on that server (via `whois-shell`).
+does a query for the domain on that server (via `whois-shell').
 
 Many domain registrars run their own whois server. Registrars'
 servers typically give much more detailed information than the
