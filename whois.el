@@ -81,7 +81,7 @@
     ;; Date and time in ISO format (yyyy-mm-ddThh:mm:ss). Optionally
     ;; followed by fractional seconds and/or timezone.
     (,(concat "[12][09][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
-              "\\(?:T[0-2][0-9]:[0-5][0-9]:[0-6][0-9]"
+              "\\(?:[T ][0-2][0-9]:[0-5][0-9]:[0-6][0-9]"
               "\\(?:\\.[0-9]+\\)?"
               "\\(?:Z\\|[+-][0-9][0-9][0-9][0-9]\\)?\\)?")
      (0 font-lock-preprocessor-face t))
