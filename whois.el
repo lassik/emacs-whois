@@ -1,46 +1,47 @@
 ;;; whois.el --- Syntax highlighted domain name queries using system whois
-;;
+
 ;; Copyright 2019, 2020, 2021 Lassi Kortela
 ;; SPDX-License-Identifier: GPL-2.0-or-later
+
 ;; Author: Lassi Kortela <lassi@lassi.io>
 ;; URL: https://github.com/lassik/emacs-whois
 ;; Version: 0.2.0
 ;; Package-Requires: ((emacs "24"))
 ;; Keywords: network comm
-;;
+
 ;; This file is not part of GNU Emacs.
-;;
+
 ;;; Commentary:
-;;
+
 ;; This package complements (does not replace) the standard whois
 ;; functionality of GNU Emacs.  It provides:
-;;
+
 ;; * A `whois-mode' with font-lock highlighting to make whois
 ;;   responses easier to read.
-;;
+
 ;; * A `whois-shell' command to make a whois query using the system
 ;;   whois program instead of Emacs' own (often not up to date) whois
 ;;   client.
-;;
+
 ;; * A `whois-expand' command to repeat the last whois query using the
 ;;   domain registrar's own whois server.
-;;
+
 ;; To replace Emacs' own `whois' command with the one from this
 ;; package:
-;;
+
 ;; (when (require 'whois nil t) (defalias 'whois 'whois-shell))
-;;
+
 ;;; Code:
 
 ;; GNU Emacs defines the following variables and functions in
 ;; net-utils.el.  We will be careful not to step on any of them.
-;;
+
 ;; defcustom whois-guess-server
 ;; defcustom whois-reverse-lookup-server
 ;; defcustom whois-server-list
 ;; defcustom whois-server-name
 ;; defcustom whois-server-tld
-;;
+
 ;; defun whois
 ;; defun whois-get-tld
 ;; defun whois-reverse-lookup
