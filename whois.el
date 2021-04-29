@@ -85,6 +85,10 @@
               "\\(?:\\.[0-9]+\\)?"
               "\\(?:Z\\|[+-][0-9][0-9][0-9][0-9]\\)?\\)?")
      (0 font-lock-preprocessor-face t))
+    ;; Date and time in d.m.yyyy h:m:s format.
+    (,(concat "[0-3]?[0-9]\\.[0-1]?[0-9]\\.[12][09][0-9][0-9] "
+              "[0-2]?[0-9]:[0-5]?[0-9]:[0-6]?[0-9]")
+     (0 font-lock-preprocessor-face t))
     ;; Email address (or other address using @ syntax)
     ("[A-Za-z0-9.+-]+@[A-Za-z0-9.-]+"
      (0 font-lock-variable-name-face t))
