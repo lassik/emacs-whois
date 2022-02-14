@@ -72,7 +72,7 @@
      (1 font-lock-type-face)
      (2 font-lock-function-name-face))
     ;; Keyword: Value (lowercase key......:, e.g. fi/se domains)
-    ("^ *\\([a-z0-9 -]+\\.*:\\)\\(.*\\)$"
+    ("^ *\\([a-z0-9 _-]+\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-string-face))
     ;; Keyword: Value (generic case)
