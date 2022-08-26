@@ -95,6 +95,12 @@
      (0 font-lock-variable-name-face t))
     ;; Web URL
     ("https?://[A-Za-z0-9.:/#?&=_+-]*"
+     (0 font-lock-variable-name-face t))
+    ;; IPv6 address
+    ("[0-9a-f:]+:[0-9a-f:]+"
+     (0 font-lock-variable-name-face t))
+    ;; IPv4 address
+    ("[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+"
      (0 font-lock-variable-name-face t))))
 
 ;;;###autoload
