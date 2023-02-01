@@ -86,6 +86,10 @@
      (2 font-lock-string-face))
 
     ;; Email address (or other address using @ syntax)
+    ("REDACTED FOR PRIVACY"
+     (0 font-lock-comment-face t))
+
+    ;; Email address (or other address using @ syntax)
     ("[A-Za-z0-9.+-]+@[A-Za-z0-9.-]+"
      (0 font-lock-variable-name-face t))
 
