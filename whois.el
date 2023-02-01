@@ -59,38 +59,48 @@
   `(;; Comment starting with one or more #;%* characters and space.
     ("^[#;%*]+\\(?: .*\\)?$"
      (0 font-lock-comment-face))
+
     ;; >>> Last update of whois database: ... <<<
     ("^>>> Last update.*?: \\(.*?\\) <<<$"
      (0 font-lock-type-face)
      (1 font-lock-preprocessor-face t))
+
     ;; Keyword: Value (special case for DNSSEC)
     ("^ *\\(DNSSEC\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-function-name-face))
+
     ;; Keyword: Value (special case for Domain Name, Name Server, etc.)
     ("^ *\\(.*?Name.*?:\\|.*?Server.*?\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-function-name-face))
+
     ;; Keyword: Value (lowercase key......:, e.g. fi/se domains)
     ("^ *\\([a-z0-9 _-]+\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-string-face))
+
     ;; Keyword: Value (generic case)
     ("^ *\\([A-Z][A-Za-z0-9-/ ]+[a-z][A-Za-z0-9-/ ]+\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-string-face))
+
     ;; Email address (or other address using @ syntax)
     ("[A-Za-z0-9.+-]+@[A-Za-z0-9.-]+"
      (0 font-lock-variable-name-face t))
+
     ;; Web URL
     ("https?://[A-Za-z0-9.:/#?&=_+-]*"
      (0 font-lock-variable-name-face t))
+
     ;; IPv6 address
     ("[0-9a-f:]+:[0-9a-f:]+"
      (0 font-lock-variable-name-face t))
+
     ;; IPv4 address
     ("[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+"
      (0 font-lock-variable-name-face t))
+
     ;; Date and time in ISO format (yyyy-mm-ddThh:mm:ss). Optionally
     ;; followed by fractional seconds and/or timezone.
     (,(concat "[12][09][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
@@ -98,6 +108,7 @@
               "\\(?:\\.[0-9]+\\)?"
               "\\(?: ?Z\\| ?[+-][0-9][0-9]:?[0-9][0-9]\\)?\\)?")
      (0 font-lock-preprocessor-face t))
+
     ;; Date and time in d.m.yyyy h:m:s format.
     (,(concat "[0-3]?[0-9]\\.[0-1]?[0-9]\\.[12][09][0-9][0-9]"
               "\\(?: [0-2]?[0-9]:[0-5]?[0-9]:[0-6]?[0-9]\\)?")
