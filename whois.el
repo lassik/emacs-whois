@@ -85,7 +85,6 @@
      (1 font-lock-type-face)
      (2 font-lock-string-face))
 
-    ;; Email address (or other address using @ syntax)
     ("REDACTED FOR PRIVACY"
      (0 font-lock-comment-face t))
 
