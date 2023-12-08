@@ -86,6 +86,10 @@
     ("[A-Za-z ]*[Rr]\\(?:EDACTED\\|edacted\\)[A-Za-z ]*"
      (0 font-lock-comment-face t))
 
+    ;; GDPR protected
+    ("GDPR.*"
+     (0 font-lock-comment-face t))
+
     ;; IPv6 address
     ("[0-9a-f:]+:[0-9a-f:]+"
      (0 font-lock-variable-name-face t))
