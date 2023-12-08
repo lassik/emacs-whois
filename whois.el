@@ -60,11 +60,6 @@
     ("^[#;%*]+\\(?: .*\\)?$"
      (0 font-lock-comment-face))
 
-    ;; >>> Last update of whois database: ... <<<
-    ("^>>> Last update.*?: \\(.*?\\) <<<$"
-     (0 font-lock-type-face)
-     (1 font-lock-preprocessor-face t))
-
     ;; Keyword: Value (special case for DNSSEC)
     ("^ *\\(DNSSEC\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
@@ -118,7 +113,12 @@
 
     ;; Web URL
     ("https?://[A-Za-z0-9.:/#?&=_+-]*"
-     (0 font-lock-variable-name-face t))))
+     (0 font-lock-variable-name-face t))
+
+    ;; >>> Last update of whois database: ... <<<
+    ("^>>> Last update.*?: \\(.*?\\) <<<$"
+     (0 font-lock-type-face t)
+     (1 font-lock-preprocessor-face t))))
 
 ;;;###autoload
 (define-derived-mode whois-mode special-mode "Whois"
