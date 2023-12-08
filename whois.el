@@ -76,7 +76,7 @@
      (2 font-lock-string-face))
 
     ;; Keyword: Value (generic case)
-    ("^ *\\([A-Z][A-Za-z0-9-/ ]+[a-z][A-Za-z0-9-/ ]+\\.*:\\)\\(.*\\)$"
+    ("^ *\\([A-Z][A-Za-z0-9-/ ]+[A-Za-z][A-Za-z0-9-/ ]+\\.*:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-string-face))
 
