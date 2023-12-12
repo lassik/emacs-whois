@@ -120,7 +120,7 @@
      (0 font-lock-variable-name-face t))
 
     ;; >>> Last update of whois database: ... <<<
-    ("^>>> Last update.*?: \\(.*?\\) <<<$"
+    ("^ *>>> Last update.*?: \\(.*?\\) <<<$"
      (0 font-lock-type-face t)
      (1 font-lock-preprocessor-face t))))
 
