@@ -178,7 +178,8 @@ in which case the information in that buffer will be expanded."
           (error "No domain name"))
         (setq domain (downcase (match-string 1)))
         (unless (re-search-forward
-                 "registrar whois server: \\([a-z0-9.-]+\\)$" nil t)
+                 "registrar whois server: \\(?:https?://\\)\\([a-z0-9.-]+\\)$"
+                 nil t)
           (error "Registrar whois server not known"))
         (setq server (downcase (match-string 1)))
         (message "Looking up %s using %s..." domain server)
