@@ -66,7 +66,7 @@
      (2 font-lock-function-name-face))
 
     ;; Keyword: Value (special case for Domain Name, Name Server, etc.)
-    ("^ *\\(.*?[Nn]ame.*?:\\|.*?[Ss]erver.*?\\)\\(.*\\)$"
+    ("^ *\\(.*?[Nn]ame.*?:\\|.*?[Ss]erver.*?:\\)\\(.*\\)$"
      (1 font-lock-type-face)
      (2 font-lock-function-name-face))
 
