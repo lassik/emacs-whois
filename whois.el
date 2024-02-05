@@ -83,7 +83,7 @@
     ;; DATA REDACTED
     ;; REDACTED FOR PRIVACY
     ;; Redacted for Privacy
-    ("[A-Za-z ]*[Rr]\\(?:EDACTED\\|edacted\\)[A-Za-z ]*"
+    ("[A-Za-z ]*\\(?:REDACTED\\|[Rr]edacted\\)[A-Za-z ]*"
      (0 font-lock-comment-face t))
 
     ;; GDPR protected
