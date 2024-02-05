@@ -86,6 +86,10 @@
     ("[A-Za-z ]*\\(?:REDACTED\\|[Rr]edacted\\)[A-Za-z ]*"
      (0 font-lock-comment-face t))
 
+    ;; Not Disclosed
+    ("[Nn]ot [Dd]isclosed.*"
+     (0 font-lock-comment-face t))
+
     ;; GDPR protected
     ("GDPR.*"
      (0 font-lock-comment-face t))
