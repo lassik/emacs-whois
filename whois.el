@@ -119,7 +119,7 @@
      (0 font-lock-preprocessor-face t))
 
     ;; Email address (or other address using @ syntax)
-    ("[A-Za-z0-9.+-]+@[A-Za-z0-9.-]+"
+    ("[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+"
      (0 font-lock-variable-name-face t))
 
     ;; Web URL
