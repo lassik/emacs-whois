@@ -154,7 +154,7 @@ DOMAIN can be nil. If READ-P is non-nil, read from minibuffer."
       default)))
 
 ;;;###autoload
-(defun whois-shell (query &optional buffer)
+(defun whois-shell (query buffer)
   "Run whois domain name query using external program.
 
 QUERY is usually the domain name to search for (e.g.
@@ -212,7 +212,8 @@ in which case the information in that buffer will be expanded."
           (error "Registrar whois server not known"))
         (setq server (downcase (match-string 1)))
         (message "Looking up %s using %s..." domain server)
-        (whois-shell (concat "-h " server " " domain))))))
+        (whois-shell (concat "-h " server " " domain)
+                     (current-buffer))))))
 
 (provide 'whois)
 
