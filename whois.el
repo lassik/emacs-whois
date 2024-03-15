@@ -141,17 +141,17 @@
   (set (make-local-variable 'font-lock-defaults)
        '((whois-mode-font-lock-keywords) nil nil ((?_ . "w")) nil)))
 
-(defun whois--buffer-name (domain read-p)
-  "Internal function to generate Whois buffer name for DOMAIN.
+(defun whois--domain-from-shell-command (query)
+  "Internal function to parse domain name (or nil) from QUERY."
+  (save-match-data
+    (let ((case-fold-search t))
+      (and (string-match "^[a-z0-9][a-z0-9.-]*" query)
+           (match-string-no-properties 0 query)))))
 
-DOMAIN can be nil. If READ-P is non-nil, read from minibuffer."
-  (let* ((prefix "Whois")
-         (default (if domain
-                      (format "*%s: %s*" prefix domain)
-                    (format "*%s*" prefix))))
-    (if read-p
-        (read-from-minibuffer "Buffer name: " default nil nil nil default)
-      default)))
+(defun whois--default-buffer-name (domain)
+  "Internal function to generate Whois buffer name for DOMAIN."
+  (let ((prefix "Whois"))
+    (if domain (format "*%s: %s*" prefix domain) (format "*%s*" prefix))))
 
 ;;;###autoload
 (defun whois-shell (query buffer)
@@ -160,19 +160,19 @@ DOMAIN can be nil. If READ-P is non-nil, read from minibuffer."
 QUERY is usually the domain name to search for (e.g.
 \"gnu.org\"), but if you give some flags to the whois client then
 it can mean something different. It's possible to give command
-line options to the whois program by separating them with
-spaces.
+line options to the whois program by separating them with spaces.
 
 If BUFFER is non-nil, that buffer is created or re-used.  Default
 buffer names follow the pattern \"*Whois: example.com*\"."
   (interactive
    (let* ((query (read-from-minibuffer
                   "Whois query (and command line options): "))
-          (domain (save-match-data
-                    (let ((case-fold-search t))
-                      (and (string-match "^[a-z0-9][a-z0-9.-]*" query)
-                           (match-string-no-properties 0 query)))))
-          (buffer (whois--buffer-name domain current-prefix-arg)))
+          (domain (whois--domain-from-shell-command query))
+          (default (whois--default-buffer-name domain))
+          (buffer (if current-prefix-arg
+                      (read-from-minibuffer "Buffer name: "
+                                            default nil nil nil default)
+                    default)))
      (list query buffer)))
   (switch-to-buffer (get-buffer-create buffer))
   (unless (equal 'whois-mode major-mode)
